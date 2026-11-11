@@ -30,7 +30,7 @@
 </div></section>
 
 <section id="about"><h2>What STUCK.CENTER is—and isn't</h2><p>STUCK.CENTER is an independent information and user-interface research project from Useless Instruments. It does not provide emergency response, therapy, diagnoses, legal advice, or individually tailored financial advice. Calculators, when released, will be educational estimates, not decisions or guarantees. Local laws and personal safety circumstances vary.</p>
-<p class="small soft">This page uses no analytics, cookies, third-party fonts, external scripts, or contact forms. Budget inputs are never saved or transmitted by this page. Network providers and devices may still record visits; external links have their own privacy policies. Private browsing does not guarantee safety.</p>
+<p class="small soft">This page sends one anonymous page-view count to the Useless Instruments dashboard when opened; it does not send budget inputs or store visitor identifiers, cookies, session histories, or time-on-page measurements. No third-party fonts, embedded scripts, or contact forms are used. Network providers and devices may still record visits; external links have their own privacy policies. Private browsing does not guarantee safety.</p>
 </section></main><footer><div class="wrap">STUCK.CENTER · Independent information, not counseling or legal advice. · If you need emotional crisis support in the U.S., call or text <a href="https://988lifeline.org/">988</a>. · Resources verified November 11, 2026.<p class="small soft" style="margin:14px 0 0">An independent <a href="https://uselessinstruments.com/">Useless Instruments</a> project. Small tools for a larger mind.</p></div></footer>
 <script>
 (function(){
@@ -49,4 +49,13 @@ document.getElementById("quickExit").addEventListener("click",e=>{e.preventDefau
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){window.location.replace("https://www.weather.gov/")}});
 compute();
 })();
+</script><script id="anonymous-page-views-only">
+/* One view count per page load. No IDs persist; no heartbeat, cookies, or budget values. */
+(()=>{try{
+ const endpoint='https://znzoepudtfpsxoglkyia.supabase.co/rest/v1/site_visit_events';
+ const key='sb_publishable_XySCbewhCGiQXPGMui5peA_SiZz0VqA';
+ if(!globalThis.crypto?.randomUUID)return;
+ const row={project_slug:'stuck-center',visitor_id:crypto.randomUUID(),session_id:crypto.randomUUID(),event_type:'view'};
+ fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json',apikey:key,Prefer:'return=minimal'},body:JSON.stringify(row),keepalive:true}).catch(()=>{});
+}catch(e){}})();
 </script></body></html>
